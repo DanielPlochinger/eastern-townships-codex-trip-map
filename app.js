@@ -32,7 +32,6 @@ const markers = new Map();
 const search = document.querySelector("#search");
 const guideSearch = document.querySelector("#guide-search");
 const detailSheet = document.querySelector("#detail-sheet");
-const resultCount = document.querySelector("#result-count");
 
 function escapeHtml(value) {
   return String(value || "").replace(/[&<>"']/g, (char) => ({
@@ -261,7 +260,6 @@ function selectPlace(id, options = {}) {
 function renderGuide() {
   const list = document.querySelector("#guide-list");
   const places = visiblePlaces();
-  resultCount.textContent = `${places.length} places`;
   list.innerHTML = "";
 
   for (const cat of data.categories) {
@@ -375,6 +373,10 @@ document.querySelector("#locate").addEventListener("click", () => {
     }).addTo(map);
     map.panTo(latLng, { animate: true, duration: 0.45 });
   }, () => {}, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
+});
+
+document.querySelector("#reload-app").addEventListener("click", () => {
+  window.location.reload();
 });
 
 render();
