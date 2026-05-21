@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Eastern Townships Trip Map</title>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <section class="panel active" id="map-panel" aria-label="Map">
+        <div id="map" aria-label="Eastern Townships map"></div>
+
+        <header class="topbar">
+          <div class="search-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m1.35-5.15a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z"/></svg>
+            <input id="search" type="search" autocomplete="off" placeholder="Search places, towns, notes">
+          </div>
+          <div class="view-switch" aria-label="View">
+            <button class="tab active" type="button" data-panel="map">Map</button>
+            <button class="tab" type="button" data-panel="guide">Guide</button>
+          </div>
+        </header>
+
+        <div class="category-strip" id="category-strip" aria-label="Categories"></div>
+
+        <div class="map-tools">
+          <button class="icon-button" id="locate" type="button" aria-label="Show my location" title="Show my location">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 4 18-4-3-4 3 4-18Z"/></svg>
+          </button>
+        </div>
+
+        <aside class="detail-sheet hidden" id="detail-sheet" aria-live="polite">
+        </aside>
+      </section>
+
+      <section class="panel guide-panel" id="guide-panel" aria-label="Guide">
+        <header class="guide-header">
+          <h1>Eastern Townships</h1>
+          <span id="result-count"></span>
+        </header>
+        <div class="guide-controls">
+          <div class="guide-toolbar">
+            <div class="search-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m1.35-5.15a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z"/></svg>
+              <input id="guide-search" type="search" autocomplete="off" placeholder="Search the guide">
+            </div>
+            <div class="view-switch" aria-label="View">
+              <button class="tab" type="button" data-panel="map">Map</button>
+              <button class="tab active" type="button" data-panel="guide">Guide</button>
+            </div>
+          </div>
+          <div class="category-strip guide-cats" id="guide-category-strip" aria-label="Guide categories"></div>
+        </div>
+        <main class="guide-list" id="guide-list"></main>
+      </section>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="data.js?v=20260521-5"></script>
+    <script src="app.js?v=20260521-5"></script>
+  </body>
+</html>

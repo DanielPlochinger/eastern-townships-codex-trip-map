@@ -1,0 +1,88 @@
+[
+  {
+    "id": "scenic-brome-missisquoi-wine-route-maps",
+    "title": "Brome‑Missisquoi Wine Route",
+    "line": [
+      [
+        45.027,
+        -73.065
+      ],
+      [
+        45.053,
+        -72.838
+      ],
+      [
+        45.13,
+        -72.8
+      ],
+      [
+        45.199,
+        -72.749
+      ],
+      [
+        45.316,
+        -72.646
+      ],
+      [
+        45.216,
+        -72.513
+      ]
+    ]
+  },
+  {
+    "id": "scenic-townships-trail-chemin-des-cantons-maps",
+    "title": "Townships Trail (Chemin des Cantons)",
+    "line": [
+      [
+        45.401,
+        -72.733
+      ],
+      [
+        45.316,
+        -72.646
+      ],
+      [
+        45.276,
+        -71.973
+      ],
+      [
+        45.4,
+        -71.892
+      ],
+      [
+        45.156,
+        -71.8
+      ],
+      [
+        45.582,
+        -70.889
+      ]
+    ]
+  },
+  {
+    "id": "scenic-summit-drive-route-des-sommets-maps",
+    "title": "Summit Drive (Route des Sommets)",
+    "line": [
+      [
+        45.399,
+        -71.258
+      ],
+      [
+        45.456,
+        -71.179
+      ],
+      [
+        45.582,
+        -70.889
+      ],
+      [
+        45.838,
+        -71.089
+      ],
+      [
+        45.673,
+        -71.659
+      ]
+    ]
+  }
+]
