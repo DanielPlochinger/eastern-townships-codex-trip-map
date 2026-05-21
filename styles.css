@@ -114,15 +114,16 @@ input[type="search"] {
   height: 34px;
   display: grid;
   place-items: center;
-  border: 1px solid var(--line);
+  border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   background: #fff;
   color: #1f2937;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);
+  box-shadow: none;
   cursor: pointer;
+  margin-bottom: 7px !important;
 }
 
-.locate-control svg { width: 18px; height: 18px; }
+.locate-control svg { width: 17px; height: 17px; }
 
 .view-switch {
   height: 42px;
