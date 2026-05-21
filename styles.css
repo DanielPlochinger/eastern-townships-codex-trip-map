@@ -109,7 +109,7 @@ input[type="search"] {
   font-size: 16px;
 }
 
-.icon-button {
+.locate-control {
   width: 34px;
   height: 34px;
   display: grid;
@@ -119,9 +119,10 @@ input[type="search"] {
   background: #fff;
   color: #1f2937;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
 }
 
-.icon-button svg { width: 18px; height: 18px; }
+.locate-control svg { width: 18px; height: 18px; }
 
 .view-switch {
   height: 42px;
@@ -364,13 +365,6 @@ input[type="search"] {
   box-shadow: 0 0 0 9px rgba(22, 119, 255, 0.16), 0 6px 16px rgba(22, 119, 255, 0.25);
 }
 
-.map-tools {
-  position: absolute;
-  z-index: 430;
-  right: max(10px, env(safe-area-inset-right));
-  bottom: calc(98px + var(--safe-bottom));
-}
-
 .guide-panel {
   width: 100%;
   max-width: 100vw;
@@ -537,11 +531,6 @@ input[type="search"] {
     right: auto;
     width: min(690px, 100vw);
     padding-left: 20px;
-  }
-
-  .map-tools {
-    right: 10px;
-    bottom: 98px;
   }
 
   .detail-sheet {

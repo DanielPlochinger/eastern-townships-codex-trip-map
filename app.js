@@ -25,6 +25,23 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 L.control.zoom({ position: "bottomright" }).addTo(map);
 
+const LocateControl = L.Control.extend({
+  options: { position: "bottomright" },
+  onAdd() {
+    const button = L.DomUtil.create("button", "leaflet-control locate-control");
+    button.type = "button";
+    button.id = "locate";
+    button.title = "Show my location";
+    button.setAttribute("aria-label", "Show my location");
+    button.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 4 18-4-3-4 3 4-18Z"/></svg>`;
+    L.DomEvent.disableClickPropagation(button);
+    L.DomEvent.on(button, "click", () => locateUser());
+    return button;
+  }
+});
+
+map.addControl(new LocateControl());
+
 const markerLayer = L.layerGroup().addTo(map);
 const overlayLayer = L.layerGroup().addTo(map);
 const markers = new Map();
@@ -362,7 +379,7 @@ document.querySelectorAll(".tab").forEach((tab) => {
 
 map.on("click", () => selectPlace(null));
 
-document.querySelector("#locate").addEventListener("click", () => {
+function locateUser() {
   if (!navigator.geolocation) return;
   navigator.geolocation.getCurrentPosition((position) => {
     const latLng = [position.coords.latitude, position.coords.longitude];
@@ -373,7 +390,7 @@ document.querySelector("#locate").addEventListener("click", () => {
     }).addTo(map);
     map.panTo(latLng, { animate: true, duration: 0.45 });
   }, () => {}, { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
-});
+}
 
 document.querySelector("#reload-app").addEventListener("click", () => {
   window.location.reload();
