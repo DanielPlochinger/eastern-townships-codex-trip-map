@@ -15,10 +15,17 @@ html, body { width: 100%; }
 
 body {
   margin: 0;
-  min-height: 100vh;
-  overflow: hidden;
+  min-height: calc(100dvh + 1px);
+  overflow-x: hidden;
+  overflow-y: auto;
   background: var(--bg);
   color: var(--ink);
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: 1px;
 }
 
 button, input { font: inherit; }
@@ -28,6 +35,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 .app-shell {
   position: fixed;
   inset: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
   max-width: 100vw;
 }
